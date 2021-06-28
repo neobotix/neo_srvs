@@ -19,6 +19,7 @@ add_service_files(FILES
   ResetOmniWheels.srv
   RelayBoardSetEMStop.srv
   RelayBoardUnSetEMStop.srv
+  ActivateMotors.srv
 
 )
 
