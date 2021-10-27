@@ -3,8 +3,6 @@
   <version>0.1.0</version>
   <description>ROS-Services for Neobotix mobile Robots</description>
 
-  <license>LGPL</license>
-
   <maintainer email="ros@neobotix.de">Neobotix</maintainer>
 
   <license>BSD</license>
