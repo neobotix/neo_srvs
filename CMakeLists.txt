@@ -8,25 +8,31 @@ if(NOT CMAKE_BUILD_TYPE)
       FORCE)
 endif(NOT CMAKE_BUILD_TYPE)
 
-find_package(catkin REQUIRED COMPONENTS message_generation)
+find_package(catkin REQUIRED COMPONENTS message_generation std_msgs neo_msgs)
 
-add_service_files(FILES
-  RelayBoardSetRelay.srv
-  IOBoardSetDigOut.srv
-  RelayBoardSetLCDMsg.srv
-  LockPlatform.srv
-  UnlockPlatform.srv
-  ResetOmniWheels.srv
-  RelayBoardSetEMStop.srv
-  RelayBoardUnSetEMStop.srv
+add_service_files(
+  FILES
   ActivateMotors.srv
-
+  IOBoardSetDigOut.srv
+  LockPlatform.srv
+  RelayBoardSetEMStop.srv
+  RelayBoardSetLCDMsg.srv
+  RelayBoardSetLED.srv
+  RelayBoardSetRelay.srv
+  RelayBoardSetSafetyMode.srv
+  RelayBoardUnSetEMStop.srv
+  ResetOmniWheels.srv
+  SetSafetyField.srv
+  UnlockPlatform.srv
+  USBoardToggleSensor.srv
 )
 
 generate_messages(
   DEPENDENCIES
+  std_msgs
+  neo_msgs
 )
 
 catkin_package(
-    CATKIN_DEPENDS message_runtime
+  CATKIN_DEPENDS message_runtime std_msgs neo_msgs
 )
